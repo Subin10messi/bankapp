@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">
+</head>
+<style>
+        body{
+        background-image:url("{%static 'login/imgback.jpg'%}")
+        }
+
+
+
+
+
+</style>
+<body>
+<h1 class="head2">Welcome to Login</h1>
+<form action="" method="post">
+    <div class="container bodylog">
+        <div class="row">
+            <div class="col-3">
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" class="btn btn-success" value="login">
+            </div>
+        </div>
+    </div>
+</form>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <input type="checkbox" style="margin-right:4px;">Rememberme <br>
+            <a href="#" class="pwd">Forgotten Password?</a><br>
+            New user?<a class="link1" href="{%url 'signup'%}">  Sign up here</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
